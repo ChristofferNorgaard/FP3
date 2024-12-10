@@ -1,0 +1,68 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{physics, siunitx}
+\usepackage{hyperref}
+\usepackage[slovene]{babel}
+
+% ipe support
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,patterns}
+\usetikzlibrary{ipe} % ipe compatibility library
+
+
+\geometry{margin=3.5cm}
+\sisetup{separate-uncertainty=true, exponent-product=\cdot, range-units=single}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+\setlength{\parindent}{0pt}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}
+
+\begin{document}
+\section{Torzijsko nihalo z visečo žico}
+\subsection{Naloga}
+Na jekleni žici imamo obešeno kovinsko ploščo z ročajem. Želimo izmeriti njen nihajni čas in s tem torzijske lasnosti žice.
+\subsection{Potrebščine}
+\begin{itemize}
+    \item stojalo, jeklena žica, plošča z ročajem
+    \item uteži: votel kovinski val, kvader z valjasto votlino
+    \item tehtnica, štoparica, klunasto merilo, mikrometer
+\end{itemize}
+
+\subsection{Potek}    
+\subsubsection{Geometrijske razsežnosti}
+Izmeri lasnosti žice, ter obeh uteži. 
+
+Lastnosti žice (vse tri širine izmeri na različnih mestih)
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Meritev & Dolžina {[}mm{]} & Širina 1 {[}mm{]} & Širina 2 {[}mm{]} & \begin{tabular}[c]{@{}l@{}}Širina 3\\ {[}mm{]}\end{tabular} \\ \hline
+1       &                  &                   &                   &                                                             \\ \hline
+2       &                  &                   &                   &                                                             \\ \hline
+\end{tabular}
+\end{center}
+
+Prav tako skiciraj in stehtaj ostali dve telesi.
+\pagebreak
+
+\subsubsection{Izmeri nihajni čas teles}
+
+Meri z štoparico. Meri 10 ponovitev. Ploščo izmakni za majhen kot.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Meritev & Prazna ploščad [s] & Kvader [s] & Valj  [s] \\ \hline
+1       &                &        &      \\ \hline
+2       &                &        &      \\ \hline
+3       &                &        &      \\ \hline
+4       &                &        &      \\ \hline
+5       &                &        &      \\ \hline
+\end{tabular}
+\end{center}
+\end{document}
+

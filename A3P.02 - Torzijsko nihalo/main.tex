@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage{float}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{babel}[slovene]
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{geometry}
+\usepackage{amsmath}
+
+\pgfplotsset{compat=1.18} 
+\geometry{margin=1in}
+\title{Poročilo vaje 20}
+\author{Jakob Kralj}
+\date{Oktober 2023}
+
+\begin{document}
+
+\begin{center}
+\begin{tabular}{l@{\hskip 3cm}r@{\hskip 2cm}r}
+\textbf{Fizikalni praktikum: Torzijsko Nihalo} & \textbf{Avtor:} & \textbf{Datum:} \\
+& Jakob Kralj & \today \\
+\end{tabular}
+\end{center}
+
+\section{Teoretični uvod}
+
+Strižna napetost je napetost telesa preko ravnine, pravokotne na tlačno silo. Označimo jo kot
+\begin{equation*}
+    \frac{F}{S} = G \alpha,
+\end{equation*}
+kjer je $ F/S $ strižna napetost, $ G $pa strižni modul. Strižno napetost lahko izrazimo tudi pri torzijski deformaciji in sicer kot
+\begin{equation*}
+    M = D \phi,
+\end{equation*}
+kjer je $ M $ navor in $ \phi $ kot zasuka enega dela žice glede na drugega. Da bi izpeljali $ D $ glede na $ G $ si predstavljamo, da je žica sestavljena iz mnogih tankih cevk, ki se prilagajajo ena na drugo. Vsak majhen košček te cevke se ob torzijski deformaciji premakne za $ \phi r $, dolžina cevke pa je $ l $, torej se košček deformira za $ \alpha = r \phi / l $. Glede na zgornjo enačbo za strižno deformacija lahko torej napišemo:
+\begin{equation*}
+    dM = r dF = r \alpha G dS.
+\end{equation*}
+
+V enačbo vstavimo vrednosti za $ \alpha $ in $ S $, potem pa enačbo integriramo
+\begin{equation} \label{eq:3}
+    M = \int dM = \frac{\pi r_0^{2} G \phi}{2 l} =  D \phi,
+\end{equation}
+kar pomeni, da je $ D = \frac{\pi r_0^{2} G}{2l} $. $ G $ lahko povežemo z prožnostnim modulom preko:
+\begin{equation}
+G = \frac{E}{2(1 + \mu)},
+\end{equation}
+kjer je $ \mu $ Poissonovo število in predstavlja razmerje:
+\begin{equation*}
+    \frac{\Delta r}{r} = - \mu \frac{\Delta l}{l}.
+\end{equation*}
+Zadevo povežimo še z nihanjem na torzijskem nihalu. To opisuje naslednja enačba (za majhne odklone):
+\begin{equation} \label{eq:2}
+    t_0 = 2 \pi \sqrt{\frac{J}{D}},
+\end{equation}
+
+kjer je $ D $ že prej omenjeni torzijski koeficient, $ J $ pa vztrajnostni moment. V nalogi je potrebno izračunati vztrajnostni moment za dve telesi.
+
+\paragraph{Votel valj}
+
+Osnovna enačba za izračun vztrajnostnega momenta telesa je:
+\begin{equation*}
+   J = \rho \int_V r^{2} d V.
+\end{equation*}
+
+Glede na to, da gre za cilinder, izkoristimo simetrijo, da dobimo:
+\begin{equation*}
+    J = \rho \int_r^{R} r^{2} 2 \pi r L dr
+\end{equation*}
+
+Kar nam ob izvrednotenju da:
+\begin{equation*}
+    J = \frac{2 \pi L \rho (R^{4} - r^{4})}{4}
+\end{equation*}
+
+Enačbo lahko razpišemo preko razdelitve kvadratov v:
+\begin{equation*}
+    J = \frac{\pi L \rho (R^{2} - r^{2})(R^{2} + r^{2})}{2}
+\end{equation*}
+
+pri tem pa upoštevajmo, da je masa cilindra ravno $ M = \pi L \rho (R^{2} - r^{2}) $, kar nam da končno enačbo
+\begin{equation} \label{eq:1}
+    J = \frac{1}{2} M (R^{2} + r^{2})
+\end{equation}
+
+\paragraph{Kvader z valjasto votlino}
+
+Pri izračunu lahko uporabimo dejstvo, da so vztrajnostni momenti aditivni. Tako je 
+\begin{equation*}
+    J_\text{votel kvader} = J_{\text{poln kvader}} - J_{\text{izrezan cilinder}}
+\end{equation*}
+
+Edina nevšečnost je torej določiti mase polnega kvadra in izrezanega cilindra, v kolikor imamo le maso votlega kvadra. 
+
+Gostoto materiala, iz katerega je cilinder, lahko izračunamo kot:
+\begin{equation*}
+    \rho = \frac{M}{a \cdot b \cdot l - \pi r^{2} l},
+\end{equation*}
+
+vstavimo:
+\begin{equation*}
+J_\text{votel kvader} = \frac{1}{12} \rho (a \cdot b \cdot l) (a^{2} + b^{2}) - \frac{1}{2} \rho (\pi r^{2} l) r^{2}
+\end{equation*}
+in izpostavimo:
+\begin{equation} \label{eq:5}
+J_\text{votel kvader} = \frac{M}{12(a \cdot b \cdot l - \pi r^{2} l)} \left((a \cdot b \cdot l) (a^{2} + b^{2}) - 6(\pi r^{2} l) r^{2} \right).
+\end{equation}
+
+\section{Meritve}
+
+\paragraph{Mase}
+\begin{align*}
+  &m_{\text{valja}}=2490.0 \pm 1 g && m_{\text{kvadra}}=1193.0 \pm 1 g &&m_{\text{zobnika}}=750 \pm 1 g
+\end{align*}
+\paragraph{Valj}
+\begin{align*}
+  &r_{\text{notranji}} = 7.2 \pm 0.05 mm && r_{\text{zunanji}} = 43.6 \pm 0.05 mm && h = 49.3 \pm 0.1 mm
+\end{align*}
+\paragraph{Kvader}
+\begin{align*}
+  &a = 60.0 \pm 0.1 mm && r_{\text{notranji}} = 20.1 \pm 0.05 mm
+\end{align*}
+
+\paragraph{Žica}
+\begin{align*}
+  &l = 20.8 \pm 0.1 cm && r = 0.27 \pm 0.005 mm \\
+\end{align*}
+
+\paragraph{Nihajni časi}
+
+Tabela predstavlja meritev 10ih nihajnih časov:  \\
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+Meritev & Prazna ploščad (s) & Kvader (s) & Valj (s) & Zobnik (s) \\
+\hline
+1 & 22,3 & 42,5 & 62,0 & 31,2 \\
+2 & 21,7 & 42,3 & 61,9 & 31,1 \\
+3 & 21,7 & 42,5 & 61,9 & 31,4 \\
+4 & 21,5 & 42,2 & 61,7 & 31,3 \\
+5 & 21,8 & 42,4 & 61,8 & 30,9
+\end{tabular}
+\end{center}
+
+Iz izmerjenih časov lahko izračunamo:
+\begin{align*}
+  &t_{p} = 2.18 \pm 0.03 s && t_{k} = 4.238 \pm 0.013 s && t_{v} = 6.186 \pm 0.011 s &&  t_{z} = 3.118 \pm 0.019 s
+\end{align*}
+
+\section{Obdelava in rezultati}
+
+Na podlagi enačbe \ref{eq:1}, in iz izmerjenih mas ter dimenzij, lahko izračunamo vztrajnostni moment valja kot \( J_{k} = 958000.0 \pm 11000.0 g mm² = 9.58 \cdot 10^{-4} \pm 1.1 \cdot 10^{-5}  kg m² \). Obrnjena enačba\ref{eq:2} nam pove, da
+\begin{equation*}
+  \frac{t_{0}^{2}  }{4 \pi^{2} } = \frac{J}{D},
+\end{equation*}
+
+Vemo pa, da je pri nihajnih časih votlega valja \( J_{s} = J_{p} + J_{v}  \):
+
+\begin{equation*}
+\frac{t_{v}^{2} - t_{p}^{2} }{4 \pi^{2} }  = \frac{J_{p}+J_{v}-J_{p} }{D} = \frac{J_{v} }{D},
+\end{equation*}
+
+enačbo obrnemo in izračunamo, da je \( D = 0.002864 \pm 1.8 \cdot 10^{-5} kg m^{2}  s^{-2}  \). Sedaj ko imamo \( D \), lahko iz istih enačb izračunamo še vztrajnostni moment plošče, ki je
+\( J_{p} = 3.45 \cdot 10^{-4}  \pm 1.1 \cdot 10^{-5}  kg m² \).
+
+Iz enačbe~\ref{eq:3} lahko izračunamo G, v kolikor poznamo \( D \), in sicer \( G = 7.14 \cdot 10^{10}  \pm 5.3 \cdot 10^{9}  kg m^{-1}  s^{-2}  \). Podatki iz literature za Jeklo se gibljejo od 72.5 Gpa do 85.3 GPa, kar pomeni, da se meriteve ne ujema znotraj napake.
+
+Teoretično lahko izračunamo vztrajnostni moment votlega kvadra z enačbo~\ref{eq:5}. Dobimo \( J_{kT} = 9.744 \cdot 10^{-4}  \pm 2.8 \cdot 10^{-6}  kg m² \). Podatek dobimo tudi eksperimentalno, in sicer \( J_{k} = 9.58 \cdot 10^{-4} \pm 1.1 \cdot 10^{-6}  kg m²  \). Podatka se ne ujemata v okviru napake.
+
+Podobno kot sem eksperimentalno dobil podatek za vztrajnostni moment kvadra, lahko izračunam še vztrajnostni moment zobnika. Dobim \( J_{z} = 3.61 \cdot 10^{-4}  \pm 1.2 \cdot 10^{-5}  kg m² \)
+\end{document}
